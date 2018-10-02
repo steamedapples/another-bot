@@ -17,10 +17,12 @@ client.on('message', message => {
     
     //help
     if (message.content.startsWith(prefix + "help")) {
-    	message.channel.send('Here's a list of functions you can use to interact with me!
+        var helpMsg = 'Here's a list of functions you can use to interact with me!
                              `help`   Pulls up the help menu. (Duh.)
         `ping`   To test if I' + "\'" 'm still up.
-        `echo`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work!~~ ');
+        `echo`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work!~~ '
+        
+    	message.channel.send(helpMsg);
   	}
     
     //ping
