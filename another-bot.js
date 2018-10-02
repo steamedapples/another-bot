@@ -6,6 +6,10 @@ client.on('ready', () => {
 });
 
 var prefix = "!";
+var helpMsg = "Here\'s a list of functions you can use to interact with me!
+                             \`help\`   Pulls up the help menu. (Duh.)
+        \`ping\`   To test if I am still up.
+        \`echo\`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work!~~ "
 
 client.on('message', message => {
     
@@ -17,11 +21,6 @@ client.on('message', message => {
     
     //help
     if (message.content.startsWith(prefix + "help")) {
-        var helpMsg = 'Here's a list of functions you can use to interact with me!
-                             `help`   Pulls up the help menu. (Duh.)
-        `ping`   To test if I am still up.
-        `echo`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work!~~ '
-        
     	message.channel.send(helpMsg);
   	}
     
