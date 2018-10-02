@@ -25,6 +25,9 @@ client.on('message', message => {
         message.content.send( message.substring(prefix.length + 4) );
     }
     
+    var echoMsg = message.content.split('!echo ')[1];
+    	message.channel.send(echoMsg);
+    
 });
 
 
