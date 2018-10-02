@@ -1,0 +1,13 @@
+{
+  "name": "Bot",
+  "description": "it a bot",
+  "version": "0.0.0",
+  "main": "another-bot.js",
+  "scripts": {
+    "start": "node another-bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
+  }
+}
