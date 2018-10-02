@@ -5,11 +5,32 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
+var prefix = "!";
+
 client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.channel.send('pong');
+    
+    //exit if no prefix
+    if (!message.content.startsWith(prefix)) return;
+    
+    
+    //commands
+    
+    //ping
+    if (message.content.startsWith(prefix + "ping")) {
+    	message.channel.send('Pong!');
   	}
+    
+    //echo
+    if (message.content.startsWith(prefix + "echo")) {
+        message.content.send( message.substring(prefix.length + 4) );
+    }
+    
 });
 
-// THIS  MUST  BE  THIS  WAY
+
+// message.channel.send = sends message
+// message.reply = sends "@user, message"
+
+
+
 client.login(process.env.BOT_TOKEN);
