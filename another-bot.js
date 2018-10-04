@@ -20,7 +20,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "help")) {
     	message.channel.send(helpMsg);
   	}
-     
+    
     //ping
     if (message.content.startsWith(prefix + "ping")) {
     	message.channel.send('Pong!');
@@ -28,17 +28,14 @@ client.on('message', message => {
     
     //echo
     if (message.content.startsWith(prefix + "echo")) {
-        var echoMsg = message.content.split( prefix + 'echo')[1];
+        var echoMsg = message.content.split('!echo ')[1];
     	message.channel.send(echoMsg);
+        //message.content.send( message.substring(prefix.length + 4) );
     }
     
-    //setprefix
-    /*if (message.content.startsWith(prefix + "setprefix")) {
-        var prefix = message.content.split(prefix + "setprefix")[1];
-        message.channel.send('All set! The new prefix is: `' + prefix + '`.');
-    }
     
-});*/
+    
+});
 
 
 // message.channel.send = sends message
