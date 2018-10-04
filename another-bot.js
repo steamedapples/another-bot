@@ -28,7 +28,7 @@ client.on('message', message => {
     
     //echo
     if (message.content.startsWith(prefix + "echo")) {
-        var echoMsg = message.content.split('!echo ')[1];
+        var echoMsg = message.content.split(prefix + "echo")[1];
     	message.channel.send(echoMsg);
         //message.content.send( message.substring(prefix.length + 4) );
     }
