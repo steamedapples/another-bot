@@ -56,7 +56,7 @@ client.on('message', message => {
                                "Outlook not so good.", "Signs point to no.", "Don't count on it.", 
                                "Ask again later.", "Best not to tell you now.", "Concentrate and ask again."];
         var eightballAns = eightballQuotes[Math.floor(Math.random() * eightballQuotes.length)];
-        message.channel.send("The 8ball says: **" + eightballAns + "**);
+        message.channel.send("The 8ball says: **" + eightballAns + "**");
     }
     
   /*  //setprefix
