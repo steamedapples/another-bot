@@ -30,10 +30,13 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "echo")) {
         var echoMsg = message.content.split(prefix + "echo")[1];
     	message.channel.send(echoMsg);
-        //message.content.send( message.substring(prefix.length + 4) );
     }
     
-    
+    //setprefix
+   if (message.content.startsWith(prefix + "setprefix")) {
+        prefix = message.content.split(prefix + "setprefix")[1];
+    	message.channel.send(prefix);
+    }
     
 });
 
