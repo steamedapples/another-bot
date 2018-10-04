@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-var prefix = "h!";
+var prefix = "!";
 var helpMsg = "Here's a list of functions you can use to interact with me! \n `help`   Pulls up the help menu. (Duh.) \n `ping`   To test if I am still up. \n `echo`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work.~~"
 
 client.on('message', message => {
@@ -20,13 +20,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "help")) {
     	message.channel.send(helpMsg);
   	}
-    
-    //setprefix
-    if (message.content.startsWith(prefix + "setprefix")) {
-        var prefix = message.content.split(prefix + "setprefix")[1];
-        message.channel.send('All set! The new prefix is: `' + prefix + '`.');
-    }
-    
+     
     //ping
     if (message.content.startsWith(prefix + "ping")) {
     	message.channel.send('Pong!');
@@ -38,7 +32,11 @@ client.on('message', message => {
     	message.channel.send(echoMsg);
     }
     
-    
+    //setprefix
+    if (message.content.startsWith(prefix + "setprefix")) {
+        var prefix = message.content.split(prefix + "setprefix")[1];
+        message.channel.send('All set! The new prefix is: `' + prefix + '`.');
+    }
     
 });
 
