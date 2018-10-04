@@ -31,7 +31,7 @@ client.on('message', message => {
     
     //ping
     if (message.content.startsWith(prefix + "ping")) {
-    	message.channel.send(':ping_pong: Pong!');
+    	message.channel.send(':ping_pong:  Pong!');
   	}
     
     //echo
