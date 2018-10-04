@@ -11,7 +11,8 @@ client.on('ready', () => {
                     \n **help**   `Pulls up the help menu. (Duh.)` \
                     \n **ping**   `Tests if I'm still up.` \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
-                    \n **flip**   `Flips a coin.`"
+                    \n **flip**   `Flips a coin.` \
+                    \n **8ball**  `Ask a question, get an answer.`"
 
 client.on('message', message => {
     
@@ -56,7 +57,7 @@ client.on('message', message => {
                                "Outlook not so good.", "Signs point to no.", "Don't count on it.", 
                                "Ask again later.", "Best not to tell you now.", "Concentrate and ask again."];
         var eightballAns = eightballQuotes[Math.floor(Math.random() * eightballQuotes.length)];
-        message.channel.send(":8ball: : " + eightballAns);
+        message.channel.send("The :8ball: says: **" + eightballAns + "**");
     }
     
   /*  //setprefix
