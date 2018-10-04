@@ -33,12 +33,12 @@ client.on('message', message => {
     }
     
     //setprefix
-    if (message.content.startsWith(prefix + "setprefix")) {
+    /*if (message.content.startsWith(prefix + "setprefix")) {
         var prefix = message.content.split(prefix + "setprefix")[1];
         message.channel.send('All set! The new prefix is: `' + prefix + '`.');
     }
     
-});
+});*/
 
 
 // message.channel.send = sends message
