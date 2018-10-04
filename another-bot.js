@@ -35,11 +35,11 @@ client.on('message', message => {
     	message.channel.send(echoMsg);
     }
     
-    //setprefix
+  /*  //setprefix
    if (message.content.startsWith(prefix + "setprefix")) {
         prefix = message.content.split(prefix + "setprefix")[1];
     	message.channel.send(prefix);
-    }
+    } */
     
 });
 
