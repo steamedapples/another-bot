@@ -5,11 +5,14 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    
+
     var prefix = "!";
     var helpMsg = "Here's a list of functions you can use to interact with me! \n `help`   Pulls up the help menu. (Duh.) \n `ping`   To test if I am still up. \n `echo`   Echoes your message. ~~Please stand at least 17m away from the bot for this to work.~~"
+
+client.on('message', message => {
     
+    prefix;
+    console.log(prefix);
     
     //exit if no prefix
     if (!message.content.startsWith(prefix)) return;
