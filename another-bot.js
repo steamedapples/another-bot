@@ -11,7 +11,6 @@ client.on('ready', () => {
 
 client.on('message', message => {
     
-    prefix;
     console.log(prefix);
     
     //exit if no prefix
