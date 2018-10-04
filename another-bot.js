@@ -35,6 +35,18 @@ client.on('message', message => {
     	message.channel.send(echoMsg);
     }
     
+    //flipcoin
+    if (message.content.startsWith(prefix + "flip")) {
+        var coinSide = Math.round(Math.random());
+        if (coinSide === 0) {
+            message.channel.send("It's heads!");
+        }
+        else {
+            message.channel.send("It's tails!");
+        }
+    }
+    
+    
   /*  //setprefix
    if (message.content.startsWith(prefix + "setprefix")) {
         prefix = message.content.split(prefix + "setprefix")[1];
