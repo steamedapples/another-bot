@@ -50,6 +50,14 @@ client.on('message', message => {
         }
     }
     
+    //8ball
+    if (message.content.startsWith(prefix + "8ball")) {
+        var eightballQuotes = ["As I see it, yes.", "Without a doubt.", "Most likely.", 
+                               "Outlook not so good.", "Signs point to no.", "Don't count on it.", 
+                               "Ask again later.", "Best not to tell you now.", "Concentrate and ask again."];
+        var eightballAns = eightballQuotes[Math.floor(Math.random() * eightballQuotes.length)];
+        message.channel.send("The 8ball says: **" + eightballAns + "**);
+    }
     
   /*  //setprefix
    if (message.content.startsWith(prefix + "setprefix")) {
