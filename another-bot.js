@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 
-    var prefix = "!";
+    var prefix = "h!";
     var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **help**   `Pulls up the help menu. (Duh.)` \
                     \n **ping**   `Tests if I'm still up.` \
