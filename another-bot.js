@@ -60,6 +60,34 @@ client.on('message', message => {
         message.channel.send("The :8ball: says: **" + eightballAns + "**");
     }
     
+    //diceroll
+    if (message.content.startsWith(prefix + "roll")) {
+        var str = message.content.split(prefix + "roll")[1];
+        var res = str.split("d");
+    
+        var arr = [];
+	    var i;
+	    for (i = 0; i < res.length; i++) {
+        arr.push(Number(res[i]));
+	    }
+    
+        var results = [];
+        var j;
+        for (j = 0; j < arr[0]; j++) {
+        var a = Math.floor(Math.random()*arr[1]+1);
+        results.push(a);
+        };
+    
+        function getSum(total, num) {
+        return total + num;
+        }
+        
+        var Sum = results.reduce(getSum);
+        var announce = "You rolled a total of **" + Sum + "**. (" + results + ")";
+        
+        message.channel.send(announce);
+    }
+    
   /*  //setprefix
    if (message.content.startsWith(prefix + "setprefix")) {
         prefix = message.content.split(prefix + "setprefix")[1];
