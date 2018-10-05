@@ -12,7 +12,8 @@ client.on('ready', () => {
                     \n **ping**   `Tests if I'm still up.` \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
-                    \n **8ball**  `Ask a question, get an answer.`"
+                    \n **8ball**  `Ask a question, get an answer.` \
+		    \n **roll**   `Roll dice. Uses XdY format. (X and Y must be explicitly stated as of now.)"
 
 client.on('message', message => {
     
