@@ -79,10 +79,10 @@ client.on('message', message => {
             } else if (arr[0] > 500) {
 		    message.channel.send("Hui flat out refuses to roll that many dice. Try a smaller number!");
 		    return;
-	    } //else if (arr[1] > 9000) {
-		    //message.channel.send("What - it's over 9000? Try a smaller number!");
-		    //return;
-		      // }
+	    } else if (arr[1] > 9000) {
+		    message.channel.send("Error: cannot compute - input seems to be over 9000? Try a smaller number!");
+		    return;
+		       }
 			
         }
         
