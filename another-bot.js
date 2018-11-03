@@ -74,7 +74,7 @@ client.on('message', message => {
 		}
 
 		for (j = 0; j < arr.length; j++) {
-        	if (isNaN(arr[j])) {
+        	if (isNaN(arr[j]) || arr.length !== 2) {
            message.channel.send(errorS);
            return;
             }
