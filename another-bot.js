@@ -76,10 +76,13 @@ client.on('message', message => {
         	if (isNaN(arr[j]) || arr.length !== 2) {
            message.channel.send("Please use the nDx format!");
            return;
-            } else if (arr[j] > 9000) {
-		    message.channel.send("Error: It's over 9000!");
+            } else if (arr[0] > 1000) {
+		    message.channel.send("Hui flat out refuses to roll that many dice. Try a smaller number!");
 		    return;
-	    }
+	    } else if (arr[1] > 9000) {
+		    message.channel.send("What - it's over 9000? Try a smaller number!");
+		    return;
+		       }
 			
         }
         
