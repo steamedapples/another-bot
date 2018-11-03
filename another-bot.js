@@ -72,7 +72,6 @@ client.on('message', message => {
 			arr.push(Number(res[i]));
 			if (isNan(arr[i])) {
 				message.channel.send("yeet we did it");
-				return;
 			}
 		}
 
