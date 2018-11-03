@@ -70,14 +70,19 @@ client.on('message', message => {
 		var i;
 		for (i = 0; i < res.length; i++) {
 			arr.push(Number(res[i]));
-			if (isNan(arr[i])) {
-				message.channel.send("yeet we did it");
-			}
 		}
+
+		for (j = 0; j < arr.length; j++) {
+        	if (isNaN(arr[j])) {
+           message.channel.send("Please use the nDx format!");
+           return;
+            }
+        }
+        
 
 		var results = [];
 		var j;
-		for (j = 0; j < arr[0]; j++) {
+		for (k = 0; k < arr[0]; k++) {
 			var a = Math.floor(Math.random() * arr[1] + 1);
 			results.push(a);
 		};
