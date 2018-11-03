@@ -92,9 +92,9 @@ client.on('message', message => {
 		}
 
 		var Sum = results.reduce(getSum);
-		var announce = "You rolled a total of **" + Sum + "**. (" + results + ")";
+		var announce = "you rolled a total of **" + Sum + "**. (" + results + ")";
 
-		message.channel.send(announce);
+		message.reply(announce);
 	}
 
 	/*  //setprefix
