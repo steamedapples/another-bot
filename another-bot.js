@@ -66,16 +66,11 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "roll")) {
         var str = message.content.split(prefix + "roll")[1];
         var res = str.split("d");
-	var errorS = "Please use the nDx format when rolling!"
     
         var arr = [];
 	    var i;
-	    for (i = 0; i < res.length; i++) {
-		    if (isNan(res[i])) {
-			    message.channel.send(errorS);
-		    } else {
+	    for (i = 0; i < res.length; i++) { 
         arr.push(Number(res[i]));
-		    }
 	    }
 	    
         var results = [];
