@@ -74,7 +74,7 @@ client.on('message', message => {
 		}
 
 		for (j = 0; j < arr.length; j++) {
-        	if (isNaN(arr[j]) || arr.length !== 2) {
+        	if (isNaN(arr[j]) /*|| arr.length !== 2*/) {
            message.channel.send(errorS);
            return;
         }
@@ -92,9 +92,9 @@ client.on('message', message => {
 		}
 
 		var Sum = results.reduce(getSum);
-		var announce = "You rolled a total of **" + Sum + "**. (" + results + ")";
+		var announce = "you rolled a total of **" + Sum + "**. (" + results + ")";
 
-		message.channel.send(announce);
+		message.reply(announce);
 	}
 
 	/*  //setprefix
