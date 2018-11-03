@@ -14,7 +14,7 @@ client.on('ready', () => {
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
-		    \n **roll**   `Roll dice. Uses XdY format. (X and Y must be explicitly stated as of now.)`"
+		    \n **roll**   `Roll dice. Uses XdY format.`"
 
 client.on('message', message => {
     
@@ -66,13 +66,18 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "roll")) {
         var str = message.content.split(prefix + "roll")[1];
         var res = str.split("d");
+	var errorS = "Please use the nDx format when rolling!"
     
         var arr = [];
 	    var i;
 	    for (i = 0; i < res.length; i++) {
+		    if (isNan(res[i])) {
+			    message.channel.send(errorS);
+		    } else {
         arr.push(Number(res[i]));
+		    }
 	    }
-    
+	    
         var results = [];
         var j;
         for (j = 0; j < arr[0]; j++) {
