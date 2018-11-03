@@ -73,19 +73,19 @@ client.on('message', message => {
 		}
 
 		for (j = 0; j < arr.length; j++) {
-        	if (isNaN(arr[j]) || arr.length !== 2) {
-           message.channel.send("Please use the nDx format!");
-           return;
-            } else if (arr[0] > 500) {
-		    message.channel.send("Hui flat out refuses to roll that many dice. Try a smaller number!");
-		    return;
-	    } else if (arr[1] > 9000) {
-		    message.channel.send("Error: cannot compute - input seems to be over 9000? Try a smaller number!");
-		    return;
-		       }
-			
-        }
-        
+			if (isNaN(arr[j]) || arr.length !== 2) {
+				message.channel.send("Please use the nDx format!");
+				return;
+			} else if (arr[0] > 500) {
+				message.channel.send("Hui flat out refuses to roll that many dice. Try a smaller number!");
+				return;
+			} else if (arr[1] > 9000) {
+				message.channel.send("Error: cannot compute - input seems to be over 9000?! Try a smaller number!");
+				return;
+			}
+
+		}
+
 
 		var results = [];
 		var j;
