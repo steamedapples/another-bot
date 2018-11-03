@@ -14,7 +14,7 @@ var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
-		    \n **roll**   `Roll dice. Uses XdY format.`"
+		    \n **roll**   `Roll dice. Uses NdX format.`"
 
 client.on('message', message => {
 
@@ -65,6 +65,7 @@ client.on('message', message => {
 	if (message.content.startsWith(prefix + "roll")) {
 		var str = message.content.split(prefix + "roll")[1];
 		var res = str.split("d");
+		var errorS = "Error: please use the nDx format when rolling!";
 
 		var arr = [];
 		var i;
@@ -73,10 +74,9 @@ client.on('message', message => {
 		}
 
 		for (j = 0; j < arr.length; j++) {
-        	if (isNaN(arr[j])) {
-           message.channel.send("Please use the nDx format!");
+        	if (isNaN(arr[j]) || arr.length !== 2) {
+           message.channel.send(errorS);
            return;
-            }
         }
         
 
