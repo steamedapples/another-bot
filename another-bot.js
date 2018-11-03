@@ -65,7 +65,6 @@ client.on('message', message => {
 	if (message.content.startsWith(prefix + "roll")) {
 		var str = message.content.split(prefix + "roll")[1];
 		var res = str.split("d");
-		var errorS= "Please use the nDx format!";
 
 		var arr = [];
 		var i;
@@ -75,9 +74,12 @@ client.on('message', message => {
 
 		for (j = 0; j < arr.length; j++) {
         	if (isNaN(arr[j]) || arr.length !== 2) {
-           message.channel.send(errorS);
+           message.channel.send("Please use the nDx format!");
            return;
-            }
+            } else if (arr[j] > 9000) {
+		    message.channel.send("Error: It's over 9000!");
+		    return;
+			
         }
         
 
