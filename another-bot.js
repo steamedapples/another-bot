@@ -116,7 +116,7 @@ client.on('message', message => {
 		 if (message.content == (proposed + "confirm") {
 		     prefix = proposed;
 		     message.channel.send("The new prefix is: `" + prefix + "`.");
-		     } else return;
+		     } else message.channel.send("Cancelled.");
 		     
 	  } 
 
