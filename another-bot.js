@@ -112,7 +112,8 @@ client.on('message', message => {
 	  //setprefix
 	 if (message.content.startsWith(prefix + "setprefix")) {
 	      var proposed = message.content.split(prefix + "setprefix")[1];
-	      message.channel.send("Change prefix to " + proposed + "? (Reply with `confirm`)");
+	      message.channel.send("Change prefix to `" + proposed + "`? (Reply with `confirm`)");
+		 if (
 	  } 
 
 });
