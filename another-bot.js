@@ -103,12 +103,17 @@ client.on('message', message => {
 
 		message.reply(announce);
 	}
+	
+	//timer
+	if (message.content.startsWith(prefix + "roll")) {
+		
+	}
 
-	/*  //setprefix
+	  //setprefix
 	 if (message.content.startsWith(prefix + "setprefix")) {
-	      prefix = message.content.split(prefix + "setprefix")[1];
-	  	message.channel.send(prefix);
-	  } */
+	      var proposed = message.content.split(prefix + "setprefix")[1];
+	      message.channel.send("Change prefix to " + proposed + "? (Reply with `confirm`);
+	  } 
 
 });
 
