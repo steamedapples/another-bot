@@ -105,8 +105,9 @@ client.on('message', message => {
 	}
 	
 	//timer
-	if (message.content.startsWith(prefix + "roll")) {
-		
+	if (message.content.startsWith(prefix + "remind")) {
+		var time = message.content.split(prefix + "remind")[1];
+		message.reply(", got it. I'll remind you in [time here].");
 	}
 
 	 /* //setprefix
