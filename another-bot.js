@@ -107,7 +107,7 @@ client.on('message', message => {
 	//timer
 	if (message.content.startsWith(prefix + "remind")) {
 		var time = message.content.split(prefix + "remind")[1];
-		var seconds = Number(time.split("s"));
+		var seconds = Number(time.split("s")[0]);
 		
 		//if (isNaN(seconds)) {
 			//message.reply("Invalid format! Use Xs instead. `Example: h!remind 6s`");
