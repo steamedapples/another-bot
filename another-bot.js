@@ -109,10 +109,10 @@ client.on('message', message => {
 		var time = message.content.split(prefix + "remind")[1];
 		var seconds = Number(time.split("s")[0]);
 		
-		if (isNaN(seconds)) {
-			message.reply("Invalid format! Use Xs instead. `Example: h!remind 6s`");
+		//if (isNaN(seconds)) {
+			//message.reply("Invalid format! Use Xs instead. `Example: h!remind 6s`");
 			//return;
-		}
+		//}
 		
 		message.reply("got it! I'll remind you in " + seconds + " seconds.");
 		setTimeout(function(){message.reply("time's up!");}, seconds*1000);
