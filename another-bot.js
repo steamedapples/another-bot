@@ -99,7 +99,7 @@ client.on('message', message => {
 		}
 
 		var Sum = results.reduce(getSum);
-		var announce = "you rolled a total of **" + Sum + "**. (" + results + ")";
+		var announce = "you rolled a total of **" + Sum + "**. (" + results + ")";{
 
 		message.reply(announce);
 	}
@@ -108,8 +108,14 @@ client.on('message', message => {
 	if (message.content.startsWith(prefix + "remind")) {
 		var time = message.content.split(prefix + "remind")[1];
 		var seconds = Number(time.split("s")[0]);
-		message.reply(" got it! I'll remind you in " + seconds + " seconds.");
-		setTimeout(function(){message.reply(" time's up!");}, seconds*1000);
+		
+		if (isNaN(seconds)) {
+			message.reply("Invalid format! Use #s instead. `Example: h!remind 6s`");
+			return;
+		}
+		
+		message.reply("got it! I'll remind you in " + seconds + " seconds.");
+		setTimeout(function(){message.reply("time's up!");}, seconds*1000);
 		
 	}
 
