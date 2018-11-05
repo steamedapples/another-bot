@@ -110,8 +110,8 @@ client.on('message', message => {
 		var seconds = Number(time.split("s")[0]);
 		
 		if (isNaN(seconds)) {
-			message.reply("Invalid format! Use #s instead. `Example: h!remind 6s`");
-			return;
+			message.reply("Invalid format! Use Xs instead. `Example: h!remind 6s`");
+			//return;
 		}
 		
 		message.reply("got it! I'll remind you in " + seconds + " seconds.");
