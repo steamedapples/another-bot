@@ -109,7 +109,7 @@ client.on('message', message => {
 		var time = message.content.split(prefix + "remind")[1];
 		var seconds = Number(time);
 		message.reply(", got it. I'll remind you in" + seconds + "seconds.");
-		setTimeout(message.reply("Time's up!"), seconds*1000);
+		setTimeout(function(){message.reply("Time's up!");}, seconds*1000);
 		
 	}
 
