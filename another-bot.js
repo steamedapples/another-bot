@@ -107,7 +107,7 @@ client.on('message', message => {
 	//timer
 	if (message.content.startsWith(prefix + "remind")) {
 		var time = message.content.split(prefix + "remind")[1];
-		var seconds = Number(time);
+		var seconds = Number(time.split("s"));
 		message.reply(" got it! I'll remind you in " + seconds + " seconds.");
 		setTimeout(function(){message.reply(" time's up!");}, seconds*1000);
 		
