@@ -114,8 +114,8 @@ client.on('message', message => {
 			return;
 		};
 		
-		message.reply(" got it! I'll remind you in " + seconds + " seconds.");
-		setTimeout(function(){message.reply(" time's up!");}, seconds*1000);
+		message.reply("got it! I'll remind you in " + seconds + " seconds.");
+		setTimeout(function(){message.reply("time's up!");}, seconds*1000);
 		
 	}
 
