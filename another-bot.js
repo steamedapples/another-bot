@@ -14,7 +14,8 @@ var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
-		    \n **roll**   `Roll dice. Uses XdY format.`"
+		    \n **roll**   `Roll dice. Uses XdY format.` \
+		    \n **remind** `Sets a timer. Uses XhYmZs format."
 
 client.on('message', message => {
 
@@ -103,11 +104,76 @@ client.on('message', message => {
 
 		message.reply(announce);
 	}
+	
+	//remind
+	if (message.content.startsWith(prefix + "remind")) {
+		var time = message.content.split(prefix + "remind")[1];
+		var beforeS = time.split("s")[0];
+		var seconds = Number(beforeS);
+		var beforeM;
+		var minutes;
+		var hours;
+		var errorF = "invalid format. Use `h!remind XhYmZs` instead!";
 
-	/*  //setprefix
+		if (time.endsWith("s") === false) {
+		message.reply(errorF);
+		return;
+	}
+
+	if (isNaN(seconds)) {
+	if (beforeS.includes("m")) {
+		beforeM = beforeS.split("m")[0];
+		minutes = Number(beforeM);
+		seconds = Number(beforeS.split("m")[1]);
+		
+		if (isNaN(seconds)) {
+			message.reply(errorF);
+			return;
+		} else if (isNaN(minutes)) {
+			if (beforeM.includes("h")) {
+				hours = Number(beforeM.split("h")[0]);
+				minutes = Number(beforeM.split("h")[1]);
+
+				if (isNaN(minutes)) {
+					message.reply(errorF);
+					return;
+				} else if (isNaN(hours)) {
+					message.reply(errorF);
+					return;
+				} else {
+					minutes += hours * 60
+					seconds += minutes * 60
+				}
+
+			} else {
+				message.reply(errorF);
+				return;
+			}
+		} else seconds += minutes * 60;
+	} else {
+		message.reply(errorF);
+		return;
+	}
+}
+
+
+	message.reply("got it! I'll remind you in " + seconds + " seconds.");
+	setTimeout(function() {
+		message.reply("time's up!");
+	}, seconds * 1000);
+
+}
+
+	 /* //setprefix
 	 if (message.content.startsWith(prefix + "setprefix")) {
-	      prefix = message.content.split(prefix + "setprefix")[1];
-	  	message.channel.send(prefix);
+	      var proposed = message.content.split(prefix + "setprefix")[1];
+	      message.channel.send("Change prefix to `" + proposed + "`? (Reply with `" + proposed + "confirm`)");
+		//problem line here
+		if (message.content == (proposed + "confirm") {
+		     prefix = proposed;
+		     message.channel.send("The new prefix is: `" + prefix + "`.");
+		     } else message.channel.send("Cancelled.");
+		     
 	  } */
 
 });
