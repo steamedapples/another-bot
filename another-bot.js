@@ -105,7 +105,7 @@ client.on('message', message => {
 	}
 	
 	//timer
-	if (message.content.startsWith(prefix + "remind")) {
+	/*if (message.content.startsWith(prefix + "remind")) {
 		var time = message.content.split(prefix + "remind")[1];
 		var seconds = Number(time.split("s")[0]);
 		
@@ -117,7 +117,47 @@ client.on('message', message => {
 		message.reply("got it! I'll remind you in " + seconds + " seconds.");
 		setTimeout(function(){message.reply("time's up!");}, seconds*1000);
 		
+	}*/
+	
+	if (message.content.startsWith(prefix + "remind")) {
+		var time = message.content.split(prefix + "remind")[1];
+		var beforeS = time.split("s")[0];
+		var seconds = Number(beforeS);
+		var beforeM;
+		var minutes;
+		var hours;
+		var errorF = "invalid format. Use `h!remind Xs` instead!";
+
+		if (time.endsWith("s") === false) {
+		message.reply(errorF);
+		return;
 	}
+
+	if (isNaN(seconds)) {
+		if (beforeS.includes("m")) {
+			beforeM = beforeS.split("m")[0];
+			minutes = Number(beforeM);
+			seconds = Number(beforeS.split("m")[1]);
+			if (isNaN(seconds)) {
+				message.reply("yeah smth wrong with seconds");
+				return;
+			} else if (isNaN(minutes)) {
+				message.reply("minutes NaN");
+				return;
+			} else seconds += minutes * 60;
+		} else {
+			message.reply("nop no m, smth wrong with seconds");
+			return;
+		}
+	}
+
+
+	message.reply("got it! I'll remind you in " + seconds + " seconds.");
+	setTimeout(function() {
+		message.reply("time's up!");
+	}, seconds * 1000);
+
+}
 
 	 /* //setprefix
 	 if (message.content.startsWith(prefix + "setprefix")) {
