@@ -15,7 +15,7 @@ var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
 		    \n **roll**   `Roll dice. Uses XdY format.` \
-		    \n **remind** `Sets a timer. Uses XhYmZs format."
+		    \n **remind** `Sets a timer. Uses XhYmZs format."`
 
 client.on('message', message => {
 
