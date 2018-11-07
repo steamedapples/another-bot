@@ -14,7 +14,8 @@ var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
-		    \n **roll**   `Roll dice. Uses XdY format.`"
+		    \n **roll**   `Roll dice. Uses XdY format.` \
+		    \n **remind** `Sets a timer. Uses XhYmZs format."
 
 client.on('message', message => {
 
@@ -126,7 +127,7 @@ client.on('message', message => {
 		var beforeM;
 		var minutes;
 		var hours;
-		var errorF = "invalid format. Use `h!remind Xs` instead!";
+		var errorF = "invalid format. Use `h!remind XhYmZs` instead!";
 
 		if (time.endsWith("s") === false) {
 		message.reply(errorF);
