@@ -135,22 +135,40 @@ client.on('message', message => {
 	}
 
 	if (isNaN(seconds)) {
-		if (beforeS.includes("m")) {
-			beforeM = beforeS.split("m")[0];
-			minutes = Number(beforeM);
-			seconds = Number(beforeS.split("m")[1]);
-			if (isNaN(seconds)) {
-				message.reply("yeah smth wrong with seconds");
-				return;
-			} else if (isNaN(minutes)) {
-				message.reply("minutes NaN");
-				return;
-			} else seconds += minutes * 60;
-		} else {
-			message.reply("nop no m, smth wrong with seconds");
+	if (beforeS.includes("m")) {
+		beforeM = beforeS.split("m")[0];
+		minutes = Number(beforeM);
+		seconds = Number(beforeS.split("m")[1]);
+		
+		if (isNaN(seconds)) {
+			message.reply("yeah smth wrong with seconds");
 			return;
-		}
+		} else if (isNaN(minutes)) {
+			if (beforeM.includes("h")) {
+				hours = Number(beforeM.split("h")[0]);
+				minutes = Number(beforeM.split("h")[1]);
+
+				if (isNaN(minutes)) {
+					message.reply("min prob");
+					return;
+				} else if (isNaN(hours)) {
+					message.reply("hours prob");
+					return;
+				} else {
+					minutes += hours * 60
+					seconds += minutes * 60
+				}
+
+			} else {
+				message.reply("no h, minutes NaN");
+				return;
+			}
+		} else seconds += minutes * 60;
+	} else {
+		message.reply("nop no m, smth wrong with seconds");
+		return;
 	}
+}
 
 
 	message.reply("got it! I'll remind you in " + seconds + " seconds.");
