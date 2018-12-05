@@ -8,28 +8,14 @@ client.on('ready', () => {
 
 
 var prefix = "h!";
-/*var helpMsg = "Here's a list of functions you can use to interact with me! \
+var helpMsg = "Here's a list of functions you can use to interact with me! \
                     \n **help**   `Pulls up the help menu. (Duh.)` \
                     \n **ping**   `Tests if I'm still up.` \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
                     \n **8ball + question **  `Ask a question, get an answer.` \
 		    \n **roll**   `Roll dice. Uses XdY format.` \
-		    \n **remind** `Sets a timer. Uses XhYmZs format.`"*/
-
-const helpMsg = new Discord.RichEmbed()
-  .setTitle("Here's a list of functions you can use to interact with me!")
-  .setColor("#2C2F33")
-  .addField("    **help**   `Pulls up the help menu. (Duh.)` \
-                    \n **ping**   `Tests if I'm still up.` \
-                    \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
-                    \n **flip**   `Flips a coin.` \
-                    \n **8ball + question **  `Ask a question, get an answer.` \
-		    \n **roll**   `Roll dice. Uses XdY format.` \
-		    \n **remind** `Sets a timer. Uses XhYmZs format.`")
-  .setFooter("Brought to you by someone who doesn't know what they're doing.");
-  
- 
+		    \n **remind** `Sets a timer. Uses XhYmZs format.`"
 
 client.on('message', message => {
 
@@ -43,7 +29,7 @@ client.on('message', message => {
 
 	//help
 	if (message.content.startsWith(prefix + "help")) {
-		message.channel.send({helpMsg});
+		message.channel.send(helpMsg);
 	}
 
 	//ping
