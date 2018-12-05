@@ -30,7 +30,6 @@ const helpMsg = new Discord.RichEmbed()
   .setFooter("Brought to you by someone who doesn't know what they're doing.");
   
  
-  message.channel.send({embed});
 
 client.on('message', message => {
 
