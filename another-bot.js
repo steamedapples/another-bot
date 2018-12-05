@@ -20,7 +20,7 @@ var prefix = "h!";
 const helpMsg = new Discord.RichEmbed()
   .setTitle("Here's a list of functions you can use to interact with me!")
   .setColor("#2C2F33")
-  .setDescription("    **help**   `Pulls up the help menu. (Duh.)` \
+  .addField("    **help**   `Pulls up the help menu. (Duh.)` \
                     \n **ping**   `Tests if I'm still up.` \
                     \n **echo**   `Echoes your message. (Users are required to stand at least 17m away from the bot for this to work.)`\
                     \n **flip**   `Flips a coin.` \
