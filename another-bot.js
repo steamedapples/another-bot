@@ -38,13 +38,13 @@ client.on('message', message => {
 
 	//exit if no prefix
 	if (!message.content.startsWith(prefix)) return;
-		message.channel.send({helpMsg});
+		
 
 	//commands
 
 	//help
 	if (message.content.startsWith(prefix + "help")) {
-		message.channel.send(helpMsg);
+		message.channel.send({helpMsg});
 	}
 
 	//ping
