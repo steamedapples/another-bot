@@ -33,7 +33,7 @@ client.on('message', message => {
   .setTitle("List of Commands")
   .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
   .setColor(#808080)
-  .setDescription(helpMsg)
+  .setDescription("hope this is what broke it")
   .setFooter("Thank you for using AnotherBot!")
   .setTimestamp()
 		
