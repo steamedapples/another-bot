@@ -30,29 +30,12 @@ client.on('message', message => {
 	//help
 	if (message.content.startsWith(prefix + "help")) {
 		
-		/*const helpMsg2 = new Discord.RichEmbed()
-  .setTitle("List of Commands")
-  .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
-  .setColor(#808080)
-  .setDescription("hope this is what broke it")
-  .setFooter("Thank you for using AnotherBot!")
-  .setTimestamp();
-		
-  message.channel.send({helpMsg2});*/
-		
 		const embed = new Discord.RichEmbed()
   .setTitle("List of Commands")
   .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
-  /*
-   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-   */
   .setColor('#808080')
-  .setDescription("This is the main body of text, it can hold 2048 characters.")
-  .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png")
-  /*
-   * Takes a Date object, defaults to current date.
-   */
-  .setTimestamp();
+  .setDescription(helpMsg)
+  .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png");
  
   message.channel.send({embed});
 	}
