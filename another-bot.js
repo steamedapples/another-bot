@@ -41,14 +41,14 @@ client.on('message', message => {
   message.channel.send({helpMsg2});*/
 		
 		const embed = new Discord.RichEmbed()
-  .setTitle("This is your title, it can hold 256 characters")
-  .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
+  .setTitle("List of Commands")
+  .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
   /*
    * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
    */
-  .setColor(0x00AE86)
+  .setColor(#808080)
   .setDescription("This is the main body of text, it can hold 2048 characters.")
-  .setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
+  .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png")
   .setImage("http://i.imgur.com/yVpymuV.png")
   .setThumbnail("http://i.imgur.com/p2qNFag.png")
   /*
