@@ -32,7 +32,6 @@ client.on('message', message => {
 		
 		const embed = new Discord.RichEmbed()
   .setTitle("List of Commands")
-  .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
   .setColor('#808080')
   .setDescription(helpMsg)
   .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png");
