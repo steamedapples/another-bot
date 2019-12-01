@@ -49,13 +49,10 @@ client.on('message', message => {
   .setColor('#808080')
   .setDescription("This is the main body of text, it can hold 2048 characters.")
   .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png")
-  .setImage("http://i.imgur.com/yVpymuV.png")
-  .setThumbnail("http://i.imgur.com/p2qNFag.png")
   /*
    * Takes a Date object, defaults to current date.
    */
   .setTimestamp()
-  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
   .addField("This is a field title, it can hold 256 characters",
     "This is a field value, it can hold 1024 characters.")
   /*
