@@ -29,7 +29,8 @@ client.on('message', message => {
 
 	//help
 	if (message.content.startsWith(prefix + "help")) {
-		const helpMsg2 = new Discord.RichEmbed()
+		
+		/*const helpMsg2 = new Discord.RichEmbed()
   .setTitle("List of Commands")
   .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
   .setColor(#808080)
@@ -37,7 +38,19 @@ client.on('message', message => {
   .setFooter("Thank you for using AnotherBot!")
   .setTimestamp();
 		
-  message.channel.send({helpMsg2});
+  message.channel.send({helpMsg2});*/
+		
+		const embed = new Discord.RichEmbed()
+  .setTitle("List of Commands")
+  .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
+  .setColor(#808080)
+  .setDescription("yo hello")
+  .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png")
+  .setTimestamp()
+  .addField("This is a field title, it can hold 256 characters",
+    "This is a field value, it can hold 1024 characters.");
+
+  message.channel.send({embed});
 	}
 
 	//ping
