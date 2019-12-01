@@ -35,7 +35,7 @@ client.on('message', message => {
   .setColor(#808080)
   .setDescription("hope this is what broke it")
   .setFooter("Thank you for using AnotherBot!")
-  .setTimestamp()
+  .setTimestamp();
 		
   message.channel.send({helpMsg2});
 	}
