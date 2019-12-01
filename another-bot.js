@@ -42,13 +42,8 @@ client.on('message', message => {
 		
 		const embed = new Discord.RichEmbed()
   .setTitle("List of Commands")
-  .setAuthor("灰", "https://i.imgur.com/umExbIF.png")
   .setColor(#808080)
-  .setDescription("yo hello")
-  .setFooter("Thank you for using AnotherBot!", "https://i.imgur.com/umExbIF.png")
-  .setTimestamp()
-  .addField("This is a field title, it can hold 256 characters",
-    "This is a field value, it can hold 1024 characters.");
+  .setDescription("yo hello");
 
   message.channel.send({embed});
 	}
