@@ -191,6 +191,12 @@ client.on('message', message => {
 		sentMsg.react("🍎")
 		})
 		.catch(console.error);
+		const filter = (reaction) => reaction.emoji.name === "🤔";
+		message.awaitReactions(filter, {time: 3000})
+			.then(collected => { 
+				message.channel.send(collected.size + " thonk")
+			})
+		.catch (console.error);
 	}
 	
 });
