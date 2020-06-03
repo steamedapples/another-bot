@@ -197,6 +197,7 @@ client.on('message', async message => {
 		} catch (error) {
 			console.error('One of the emojis failed to react.');
 		}
+	}
 	
 });
 
