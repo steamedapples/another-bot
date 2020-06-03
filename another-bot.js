@@ -186,8 +186,10 @@ client.on('message', message => {
 	
 	if (message.content.startsWith(prefix + "react")) {
 		message.channel.send("thonk?")
-		.then(sentMsg => sentMsg.react("🤔"))
-		.then(sentMsg => sentMsg.react("🍎"))
+		.then(sentMsg => {
+		sentMsg.react("🤔")
+		sentMsg.react("🍎")
+		})
 		.catch(console.error);
 	}
 	
