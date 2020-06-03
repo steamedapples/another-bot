@@ -174,7 +174,7 @@ client.on('message', message => {
 }
 
 	//reaction test
-	if (message.content.startsWith(prefix + "react")) {
+	/*if (message.content.startsWith(prefix + "react")) {
 		message.react("🤔");
 		const filter = (reaction) => reaction.emoji.name === "🤔";
 		message.awaitReactions(filter, {time: 3000})
@@ -182,19 +182,11 @@ client.on('message', message => {
 				message.channel.send(collected.size + " thonk")
 			})
 		.catch (console.error);
-}
+}*/
 	
-	 /* //setprefix
-	 if (message.content.startsWith(prefix + "setprefix")) {
-	      var proposed = message.content.split(prefix + "setprefix")[1];
-	      message.channel.send("Change prefix to `" + proposed + "`? (Reply with `" + proposed + "confirm`)");
-		//problem line here
-		if (message.content == (proposed + "confirm") {
-		     prefix = proposed;
-		     message.channel.send("The new prefix is: `" + prefix + "`.");
-		     } else message.channel.send("Cancelled.");
-		     
-	  } */
+	if (message.content.startsWith(prefix + "react")) {
+		message.channel.send("thonk?")
+		.then(sentMsg => {message.react("🤔")})
 
 });
 
