@@ -174,7 +174,7 @@ client.on('message', message => {
 }
 
 	//reaction test
-	if (message.content.startsWith(prefix + "react") {
+	if (message.content.startsWith(prefix + "react")) {
 	message.react('🤔');
 }
 	
