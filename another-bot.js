@@ -184,20 +184,12 @@ client.on('message', async message => {
 		.catch (console.error);
 }*/
 	
-	/*if (message.content.startsWith(prefix + "react")) {
-		let sentMsg = message.channel.send("thonk?");
-		sentMsg.react("🤔");
-	}*/
-	
 	if (message.content.startsWith(prefix + "react")) {
-		try {
-			await message.react('🍎');
-			await message.react('🍊');
-			await message.react('🍇');
-		} catch (error) {
-			console.error('One of the emojis failed to react.');
-		}
+		let sentMsg = await message.channel.send("thonk?");
+		await sentMsg.react("🤔");
 	}
+	
+
 	
 });
 
