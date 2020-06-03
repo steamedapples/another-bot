@@ -191,7 +191,7 @@ client.on('message', message => {
 	}*/
 		
 	if (message.content.startsWith(prefix + "react")) {
-		let sentMsg = message.channel.send("thonk?")
+		let sentMsg = message.channel.send("thonk?");
 		sentMsg.react("🤔");
 	
 });
