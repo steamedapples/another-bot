@@ -184,13 +184,18 @@ client.on('message', message => {
 		.catch (console.error);
 }*/
 	
-	if (message.content.startsWith(prefix + "react")) {
+	/*if (message.content.startsWith(prefix + "react")) {
 		message.channel.send("thonk?")
 		.then(sentMsg => sentMsg.react("🤔"))
 		.catch(console.error);
-	}
+	}*/
 		
-
+	if (message.content.startsWith(prefix + "react")) {
+		let sentMsg = message.channel.send("thonk?")
+		.then(() => sentMsg.react("🤔"))
+		.catch(console.error);
+		}
+	
 });
 
 
