@@ -175,7 +175,13 @@ client.on('message', message => {
 
 	//reaction test
 	if (message.content.startsWith(prefix + "react")) {
-	message.react('🤔');
+		message.react("🤔");
+		const filter = (reaction) => reaction.emoji.name === "🤔";
+		message.awaitReactions(filter, {time: 3000})
+			.then(collected => { 
+				message.channel.send(collected.size + " thonk")
+			})
+		.catch (console.error);
 }
 	
 	 /* //setprefix
