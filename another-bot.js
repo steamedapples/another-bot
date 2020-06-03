@@ -19,7 +19,7 @@ var helpMsg = "Here's a list of functions you can use to interact with me! \n \
 **roll**   `Roll dice. Uses XdY format.` \n \
 **remind** `Sets a timer. Uses XhYmZs format.`"
 
-client.on('message', message => {
+client.on('message', async message => {
 
 	console.log(prefix);
 
@@ -184,10 +184,19 @@ client.on('message', message => {
 		.catch (console.error);
 }*/
 	
-	if (message.content.startsWith(prefix + "react")) {
+	/*if (message.content.startsWith(prefix + "react")) {
 		let sentMsg = message.channel.send("thonk?");
 		sentMsg.react("🤔");
-	}
+	}*/
+	
+	if (message.content.startsWith(prefix + "react")) {
+		try {
+			await message.react('🍎');
+			await message.react('🍊');
+			await message.react('🍇');
+		} catch (error) {
+			console.error('One of the emojis failed to react.');
+		}
 	
 });
 
