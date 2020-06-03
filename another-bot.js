@@ -185,18 +185,8 @@ client.on('message', message => {
 }*/
 	
 	if (message.content.startsWith(prefix + "react")) {
-		message.channel.send("thonk?")
-		.then(sentMsg => {
-		sentMsg.react("🤔")
-		sentMsg.react("🍎")
-		})
-		.catch(console.error);
-		const filter = (reaction) => reaction.emoji.name === "🤔";
-		message.awaitReactions(filter, {time: 3000})
-			.then(collected => { 
-				message.channel.send(collected.size + " thonk")
-			})
-		.catch (console.error);
+		let sentMsg = message.channel.send("thonk?");
+		sentMsg.react("🤔");
 	}
 	
 });
