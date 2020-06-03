@@ -1,3 +1,5 @@
+//bot first created on Oct 2, 2018
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -171,6 +173,11 @@ client.on('message', message => {
 
 }
 
+	//reaction test
+	if (message.content.startsWith(prefix + "react") {
+	message.react('🤔');
+}
+	
 	 /* //setprefix
 	 if (message.content.startsWith(prefix + "setprefix")) {
 	      var proposed = message.content.split(prefix + "setprefix")[1];
