@@ -200,7 +200,7 @@ client.on('message', async message => {
 			await sentMsg.react('👍');
 			await sentMsg.react('👎');
 		} catch (error) {
-			message.channel.send("Something went wrong: an emoji couldn't react.");
+			return message.channel.send("Something went wrong: an emoji couldn't react.");
 		}
 		
 		const filter = (reaction, user) => {
