@@ -208,7 +208,7 @@ client.on('message', async message => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+		sentMsg.awaitReactions(filter, { max: 1, time: 10000, errors: ['time'] })
 		.then(collected => {
 			const reaction = collected.first();
 
