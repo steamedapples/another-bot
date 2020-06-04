@@ -207,19 +207,20 @@ client.on('message', async message => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		/*sentMsg.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] })
-			.then(collected => {
-				const reaction = collected.first();
+		sentMsg.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] });
+			try { 
+				collected => {
+					const reaction = collected.first();
 
-				if (reaction.emoji.name === '👍') {
-					message.reply('you reacted with a thumbs up.');
-				} else {
-					message.reply('you reacted with a thumbs down.');
+					if (reaction.emoji.name === '👍') {
+						message.reply('you reacted with a thumbs up.');
+					} else {
+						message.reply('you reacted with a thumbs down.');
+					}
 				}
-			})
-			.catch(collected => {
+			} catch (error) => {
 				message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-			});*/
+			});
 	}
 	
 
