@@ -221,7 +221,7 @@ client.on('message', async message => {
 		.catch(collected => {
 			message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 		}
-	
+	});
 
 	
 });
