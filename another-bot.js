@@ -211,7 +211,7 @@ client.on('message', async message => {
 		sentMsg.awaitReactions(filter, { max: 1, time: 15000, errors: ['time'] })
 		.then(collected => {
 			const reaction = collected.first();
-			const choice;
+			let choice;
 
 			if (reaction.emoji.name === '👍') {
 				choice = 'thumbs up';
