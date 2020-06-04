@@ -195,32 +195,34 @@ client.on('message', async message => {
 	}*/
 	
 	if (message.content.startsWith(prefix + "react")) {
-		try {
+		/*try {
 			let sentMsg = await message.channel.send("thonk?");
 			await sentMsg.react('👍');
 			await sentMsg.react('👎');
 		} catch (error) {
 			message.channel.send("Hol up, something went wrong: an emoji couldn't react.");
 			return;
-		}
+		}*/
 		
+		message.react('👍').then(() => message.react('👎'));
+
 		const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		sentMsg.awaitReactions(filter, { max: 1, time: 10000, errors: ['time'] })
-		.then(collected => {
-			const reaction = collected.first();
+		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+			.then(collected => {
+				const reaction = collected.first();
 
-			if (reaction.emoji.name === '👍') {
-				message.reply('you reacted with a thumbs up.');
-			} else {
-				message.reply('you reacted with a thumbs down.');
-			}
-		})
-		.catch(collected => {
-			message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-		});
+				if (reaction.emoji.name === '👍') {
+					message.reply('you reacted with a thumbs up.');
+				} else {
+					message.reply('you reacted with a thumbs down.');
+				}
+			})
+			.catch(collected => {
+				message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+			});
 	}
 
 	
