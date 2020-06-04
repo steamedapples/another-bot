@@ -195,8 +195,8 @@ client.on('message', async message => {
 	}*/
 	
 	if (message.content.startsWith(prefix + "react")) {
-		let sentMsg = message.channel.send("thonk?")
-		.then(() => sentMsg.react('👍'))
+		let sentMsg = message.channel.send("thonk?");
+		sentMsg.react('👍')
 		.then(() => sentMsg.react('👎'));
 		
 		/*const filter = (reaction, user) => {
