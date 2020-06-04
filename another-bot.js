@@ -200,7 +200,7 @@ client.on('message', async message => {
 			await sentMsg.react('👍');
 			await sentMsg.react('👎');
 		} catch (error) {
-			message.channel.send("Hol up, omething went wrong: an emoji couldn't react.");
+			message.channel.send("Hol up, something went wrong: an emoji couldn't react.");
 			return;
 		}
 		
@@ -214,11 +214,11 @@ client.on('message', async message => {
 			var choice;
 
 			if (reaction.emoji.name === '👍') {
-				choice = 'thumbs up';
-				message.reply(`you reacted with a ${choice}.`);
+				await choice = 'thumbs up';
+				await message.reply(`you reacted with a ${choice}.`);
 			} else {
-				choice = 'thumbs down';
-				message.reply(`you reacted with a ${choice}.`);
+				await choice = 'thumbs down';
+				await message.reply(`you reacted with a ${choice}.`);
 			}
 		})
 		.catch(collected => {
