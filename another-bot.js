@@ -195,9 +195,11 @@ client.on('message', async message => {
 	}*/
 	
 	if (message.content.startsWith(prefix + "react")) {
-		message.react('👍').then(() => message.react('👎'));
+		let sentMsg = message.channel.send("thonk?")
+		.then(() => sentMsg.react('👍'))
+		.then(() => sentMsg.react('👎'));
 		
-		const filter = (reaction, user) => {
+		/*const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
@@ -213,7 +215,7 @@ client.on('message', async message => {
 			})
 			.catch(collected => {
 				message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-			});
+			});*/
 	}
 	
 
