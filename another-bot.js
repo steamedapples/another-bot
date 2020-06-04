@@ -184,7 +184,7 @@ client.on('message', async message => {
 		.catch (console.error);
 }*/
 	
-	if (message.content.startsWith(prefix + "react")) {
+	/*if (message.content.startsWith(prefix + "react")) {
 		const thonk = "🤔";
 		let sentMsg = await message.channel.send("thonk?");
 		await sentMsg.react(thonk);
@@ -192,6 +192,28 @@ client.on('message', async message => {
 		const filter = (reaction) => reaction.emoji.name === thonk;
 		const reactions = await sentMsg.awaitReactions(filter, {time: 5000});
 		message.channel.send(`${reactions.get(thonk).count-2} thonk`);
+	}*/
+	
+	if (message.content.startsWith(prefix + "react")) {
+		message.react('👍').then(() => message.react('👎'));
+		
+		const filter = (reaction, user) => {
+			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
+		};
+
+		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+			.then(collected => {
+				const reaction = collected.first();
+
+				if (reaction.emoji.name === '👍') {
+					message.reply('you reacted with a thumbs up.');
+				} else {
+					message.reply('you reacted with a thumbs down.');
+				}
+			})
+			.catch(collected => {
+				message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+			});
 	}
 	
 
