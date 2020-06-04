@@ -195,15 +195,15 @@ client.on('message', async message => {
 	}*/
 	
 	if (message.content.startsWith(prefix + "react")) {
-		let sentMsg = message.channel.send("thonk?");
+		let sentMsg = await message.channel.send("thonk?");
 		await sentMsg.react('👍');
 		await sentMsg.react('👎');
 		
-		/*const filter = (reaction, user) => {
+		const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+		message.awaitReactions(filter, { max: 1, time: 20000, errors: ['time'] })
 			.then(collected => {
 				const reaction = collected.first();
 
@@ -215,7 +215,7 @@ client.on('message', async message => {
 			})
 			.catch(collected => {
 				message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-			});*/
+			});
 	}
 	
 
