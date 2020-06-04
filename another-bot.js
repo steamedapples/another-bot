@@ -200,14 +200,15 @@ client.on('message', async message => {
 			await sentMsg.react('👍');
 			await sentMsg.react('👎');
 		} catch (error) {
-			return message.channel.send("Something went wrong: an emoji couldn't react.");
+			message.channel.send("Something went wrong: an emoji couldn't react.");
+			return;
 		}
 		
 		const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		message.awaitReactions(filter, { max: 1, time: 15000, errors: ['time'] })
+		sentMsg.awaitReactions(filter, { max: 1, time: 15000, errors: ['time'] })
 		.then(collected => {
 			const reaction = collected.first();
 
