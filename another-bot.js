@@ -215,10 +215,10 @@ client.on('message', async message => {
 
 			if (reaction.emoji.name === '👍') {
 				//choice = 'thumbs up';
-				message.reply(`you reacted with a ${choice}.`);
+				message.reply(`up`);
 			} else {
 				//choice = 'thumbs down';
-				message.reply(`you reacted with a ${choice}.`);
+				message.reply(`down`);
 			}
 		})
 		.catch(collected => {
