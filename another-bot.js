@@ -215,8 +215,10 @@ client.on('message', async message => {
 
 			if (reaction.emoji.name === '👍') {
 				choice = 'thumbs up';
+				console.log(choice);
 			} else {
 				choice = 'thumbs down';
+				console.log(choice);
 			}
 			message.reply(`you reacted with a ${choice}.`);
 		})
