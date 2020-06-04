@@ -196,8 +196,8 @@ client.on('message', async message => {
 	
 	if (message.content.startsWith(prefix + "react")) {
 		let sentMsg = message.channel.send("thonk?");
-		sentMsg.react('👍')
-		.then(() => sentMsg.react('👎'));
+		await sentMsg.react('👍')
+		await sentMsg.react('👎'));
 		
 		/*const filter = (reaction, user) => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
