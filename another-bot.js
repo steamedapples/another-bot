@@ -214,16 +214,14 @@ client.on('message', async message => {
 			var choice;
 
 			if (reaction.emoji.name === '👍') {
-				//choice = 'thumbs up';
-				message.reply(`up`);
+				message.reply('you reacted with a thumbs up.');
 			} else {
-				//choice = 'thumbs down';
-				message.reply(`down`);
+				message.reply('you reacted with a thumbs down.');
 			}
 		})
 		.catch(collected => {
 			message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-		});
+			});
 	}
 	
 
