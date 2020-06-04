@@ -208,10 +208,9 @@ client.on('message', async message => {
 			return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
 		};
 
-		sentMsg.awaitReactions(filter, { max: 1, time: 15000, errors: ['time'] })
+		sentMsg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 		.then(collected => {
 			const reaction = collected.first();
-			//var choice;
 
 			if (reaction.emoji.name === '👍') {
 				message.reply('you reacted with a thumbs up.');
@@ -221,8 +220,7 @@ client.on('message', async message => {
 		})
 		.catch(collected => {
 			message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-			});
-	}
+		}
 	
 
 	
