@@ -189,8 +189,8 @@ client.on('message', async message => {
 		let sentMsg = await message.channel.send("thonk?");
 		await sentMsg.react(thonk);
 		
-		//const filter = (reaction) => reaction.emoji.name === thonk;
-		const reactions = await sentMsg.awaitReactions(reaction => reaction.emoji.name === thonk, {time: 5000});
+		const filter = (reaction) => reaction.emoji.name === thonk;
+		const reactions = await sentMsg.awaitReactions(filter, {time: 5000});
 		message.channel.send(`${reactions.get(thonk).count-2} thonk`);
 	}
 	
