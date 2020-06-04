@@ -214,11 +214,11 @@ client.on('message', async message => {
 			var choice;
 
 			if (reaction.emoji.name === '👍') {
-				await choice = 'thumbs up';
-				await message.reply(`you reacted with a ${choice}.`);
+				//choice = 'thumbs up';
+				message.reply(`you reacted with a ${choice}.`);
 			} else {
-				await choice = 'thumbs down';
-				await message.reply(`you reacted with a ${choice}.`);
+				//choice = 'thumbs down';
+				message.reply(`you reacted with a ${choice}.`);
 			}
 		})
 		.catch(collected => {
